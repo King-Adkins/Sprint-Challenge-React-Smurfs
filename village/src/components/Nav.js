@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Nav = props => {
     return (
         <nav className = 'nav'>
-            <Link className = 'nav_link' to = '/'>Home</Link>
-            <Link className = 'nav_link' to = '/smurfs'>Smurf List</Link>
-            <Link className = 'nav_link' to = '/smurfs-form'>Add Smurf</Link>
+            <NavLink className = 'nav_link' to = '/'>Home</NavLink>
+            <NavLink className = 'nav_link' to = '/smurfs'>Smurf List</NavLink>
+            <NavLink className = 'nav_link' to = '/smurfs-form'>Add Smurf</NavLink>
         </nav>
     );
 };

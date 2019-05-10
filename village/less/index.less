@@ -1,10 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 * {
     box-sizing: border-box;
   }
   body {
+    background: @clr-white;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
+  }
+  ul {
+    margin: 0;
   }
   a {
     color: black;
@@ -14,6 +19,19 @@
   .App {
     text-align: center;
   }
+  .logo {
+    width: 240px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .red {
+    color: @clr-hightlight;
+  }
+  .blue {
+    color: @clr-hightlight;
+  }
+  @import 'vars.less';
   @import "form.less";
   @import "list.less";
   @import "nav.less";

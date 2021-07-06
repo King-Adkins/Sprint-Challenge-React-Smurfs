@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v6/pxiEyp8kv8JHgFVrJJfedw.ttf) format('truetype');
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.App {
+  text-align: center;
+}
+.SmurfForm {
+  margin: 1rem;
+}
+.SmurfForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.SmurfForm__input {
+  padding: 0.25rem;
+  margin: 0.25rem;
+  border: 1px solid #ccc;
+}
+.SmurfForm__button {
+  padding: 0.25rem;
+  margin: 0.25rem;
+  background: white;
+  border: 1px solid #ccc;
+}
+.Smurfs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+}
+.nav_link {
+  margin: 1rem;
+  padding: 0.25rem 0.5rem;
+}

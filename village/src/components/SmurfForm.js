@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class SmurfForm extends Component {
   constructor(props) {
@@ -6,14 +8,21 @@ class SmurfForm extends Component {
     this.state = {
       name: '',
       age: '',
-      height: ''
+      height: '',
+      success: false
     };
   }
 
   addSmurf = event => {
     event.preventDefault();
     // add code to create the smurf using the api
-
+    Axios.post('http://localhost:3333/smurfs', {
+      name: this.state.name,
+      age: this.state.age,
+      height: this.state.height
+    })
+      .then(res => this.props.setState())
+      .catch(err => console.log(err));
     this.setState({
       name: '',
       age: '',
@@ -28,26 +37,27 @@ class SmurfForm extends Component {
   render() {
     return (
       <div className="SmurfForm">
+        {this.state.success && <Redirect to = '/smurfs' />}
         <form onSubmit={this.addSmurf}>
-          <input
+          <input className = 'SmurfForm_input'
             onChange={this.handleInputChange}
             placeholder="name"
             value={this.state.name}
             name="name"
           />
-          <input
+          <input className = 'SmurfForm_input'
             onChange={this.handleInputChange}
             placeholder="age"
             value={this.state.age}
             name="age"
           />
-          <input
+          <input className = 'SmurfForm_input'
             onChange={this.handleInputChange}
             placeholder="height"
             value={this.state.height}
             name="height"
           />
-          <button type="submit">Add to the village</button>
+          <button className = 'SmurfFrom_button' type="submit">Add to the village</button>
         </form>
       </div>
     );
